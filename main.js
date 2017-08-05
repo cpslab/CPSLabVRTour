@@ -3,6 +3,7 @@
 const THREE = require('three');
 const TWEEN = require('tween.js');
 const OrbitControls = require('three-orbit-controls')(THREE);
+const imagesLoaded = require('imagesloaded');
 const data = require('./data.json');
 // オブジェクト格納グローバル変数
 const mouse = {x: 0, y: 0};
@@ -29,6 +30,8 @@ let isRotation = false;
 let isMouseMove = false;
 
 let refreshCount = 0;
+
+imagesLoaded('#stage', function() {});
 
 sphereGeo.scale(-1, 1, 1);
 const sphere = new THREE.Mesh(sphereGeo, loadSphereImage(data[imageId].path));
