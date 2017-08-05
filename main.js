@@ -221,6 +221,9 @@ function rotateAnimation() {
         return;
     }
 
+    scene.remove(modalMesh);
+    scene.remove(modalBgMesh);
+
     if (rotatePosition > 360) {
         rotatePosition = 0;
         if (Math.random() < 0.5) {
