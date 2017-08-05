@@ -1,0 +1,207 @@
+{
+  "image1" : {
+    "id" : "image1",
+    "path" : "image/cpslab1.jpg",
+    "link" : [
+      {
+        "linkId" : "image2",
+        "theta" : 90,
+        "phi" : 160
+      },
+      {
+        "linkId" : "image4",
+        "theta" : -80,
+        "phi" : -100
+      }
+    ],
+    "contents" : {
+      "content1" : {
+        "id" : "content1",
+        "theta" : 85,
+        "phi" : -90,
+        "thumb" : "image/entrance.png",
+        "description" : "html5j"
+      },
+      "content4" : {
+        "id" : "content4",
+        "theta" : 100,
+        "phi" : 0,
+        "thumb" : "image/door.png",
+        "description" : "岩井先生の部屋への扉"
+      },
+      "content6" : {
+        "id" : "content6",
+        "theta" : 115,
+        "phi" : 135,
+        "thumb" : "image/air_cleaner.png",
+        "description" : "空気清浄機"
+      },
+      "content9" : {
+        "id" : "content9",
+        "theta" : 110,
+        "phi" : 85,
+        "thumb" : "image/large_desk.png",
+        "description" : "大机"
+      }
+    }
+  },
+  "image2" : {
+    "id" : "image2",
+    "path" : "image/cpslab2.jpg",
+    "link" : [
+      {
+        "linkId" : "image1",
+        "theta" : 90,
+        "phi" : -10
+      },
+      {
+        "linkId" : "image3",
+        "theta" : -90,
+        "phi" : -90
+      }
+    ],
+    "contents" : {
+      "content5" : {
+        "id" : "content5",
+        "theta" : 80,
+        "phi" : -50,
+        "thumb" : "image/box_shelf.png",
+        "description" : "ボックスの棚"
+      },
+      "content9" : {
+        "id" : "content9",
+        "theta" : 100,
+        "phi" : -95,
+        "thumb" : "image/new_3d_printer.png",
+        "description" : "new 3D printer"
+      },
+      "content1" : {
+        "id" : "content1",
+        "theta" : 100,
+        "phi" : -75,
+        "thumb" : "image/printer.png",
+        "description" : "printer"
+      },
+      "content11" : {
+        "id" : "content2",
+        "theta" : 130,
+        "phi" : 175,
+        "thumb" : "image/old_3d_printer.png",
+        "description" : "old 3D printer"
+      },
+      "content12" : {
+        "id" : "content3",
+        "theta" : 130,
+        "phi" : -165,
+        "thumb" : "image/thumb.png",
+        "description" : "old lazer 3D printer"
+      },
+      "content13" : {
+        "id" : "content4",
+        "theta" : 110,
+        "phi" : 170,
+        "thumb" : "image/sagyoudai.png",
+        "description" : "maker desk"
+      },
+      "content14" : {
+        "id" : "content5",
+        "theta" : 100,
+        "phi" : 55,
+        "thumb" : "image/hisyo.png",
+        "description" : "秘書さん席"
+      },
+      "content15" : {
+        "id" : "content6",
+        "theta" : 125,
+        "phi" : 135,
+        "thumb" : "image/bed.png",
+        "description" : "寝床1"
+      }
+    }
+  },
+  "image3" : {
+    "id" : "image3",
+    "path" : "image/cpslab3.jpg",
+    "link" : [
+      {
+        "linkId" : "image4",
+        "theta" : -75,
+        "phi" : -180
+      },
+      {
+        "linkId" : "image2",
+        "theta" : 90,
+        "phi" : -80
+      }
+    ],
+    "contents" : {
+      "content1" : {
+        "id" : "content1",
+        "theta" : 40,
+        "phi" : 100,
+        "thumb" : "image/monohoshi.png",
+        "description" : "物干し糸"
+      }
+    }
+  },
+  "image4" : {
+    "id" : "image4",
+    "path" : "image/cpslab4.jpg",
+    "link" : [
+      {
+        "linkId" : "image3",
+        "theta" : -75,
+        "phi" : -5
+      },
+      {
+        "linkId" : "image1",
+        "theta" : 90,
+        "phi" : -100
+      }
+    ],
+    "contents" : {
+      "content1" : {
+        "id" : "content1",
+        "theta" : 100,
+        "phi" : -170,
+        "thumb" : "image/tv.png",
+        "description" : "TV"
+      },
+      "content2" : {
+        "id" : "content2",
+        "theta" : 105,
+        "phi" : 110,
+        "thumb" : "image/reizouko.png",
+        "description" : "冷蔵庫"
+      },
+      "content3" : {
+        "id" : "content3",
+        "theta" : 83,
+        "phi" : 110,
+        "thumb" : "image/thumb.png",
+        "description" : "電子レンジ"
+      },
+      "content7" : {
+        "id" : "content7",
+        "theta" : 73,
+        "phi" : 110,
+        "thumb" : "image/obun.png",
+        "description" : "オーブン"
+      },
+      "content6" : {
+        "id" : "content6",
+        "theta" : 120,
+        "phi" : 0,
+        "thumb" : "image/sohu.png",
+        "description" : "ソファベッド"
+      },
+      "content8" : {
+        "id" : "content8",
+        "theta" : 100,
+        "phi" : 60,
+        "thumb" : "image/kitchen.png",
+        "description" : "キッチン"
+      }
+    }
+  }
+}
