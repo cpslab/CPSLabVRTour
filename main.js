@@ -24,6 +24,12 @@ let modalMesh = new THREE.Mesh();
 
 let rotatePosition = 0;
 
+let isRotation = false;
+
+let isMouseMove = false;
+
+let refreshCount = 0;
+
 sphereGeo.scale(-1, 1, 1);
 const sphere = new THREE.Mesh(sphereGeo, loadSphereImage(data[imageId].path));
 imageId = data[imageId].id;
@@ -106,6 +112,8 @@ window.onmousemove = function (e) {
 // マウスが押された時
 window.onmousedown = function (ev) {
   const ray = getMouseRay(ev);
+
+    isMouseMove = true;
 
   if (!controls.enabled) {
     const modalIntersect = ray.intersectObjects([modalMesh]);
@@ -201,17 +209,29 @@ function trasition(linkIndex) {
 }
 
 function rotateAnimation() {
-    if (rotatePosition > 360) {
-      rotatePosition = 0;
-      if (Math.random() < 0.5) {
-          trasition(0);
-      } else {
-          trasition(1);
+    if (!isRotation || isMouseMove) {
+      refreshCount += 1;
+
+      if (refreshCount > 1000) {
+          refreshCount = 0;
+          isRotation = true;
+          isMouseMove = false;
       }
-      return;
+
+        return;
+    }
+
+    if (rotatePosition > 360) {
+        rotatePosition = 0;
+        if (Math.random() < 0.5) {
+            trasition(0);
+        } else {
+            trasition(1);
+        }
+        return;
     }
     rotatePosition += 0.2;
-    camera.rotation.y = -1 * rotatePosition * Math.PI / 180;
+    camera.rotation.y += -1 * rotatePosition * Math.PI / 180;
     // theta = theta * Math.PI / 180;
 }
 
@@ -234,8 +254,11 @@ function onWindowResize() {
 }
 
 function loadSphereImage(path) {
+    isRotation = false;
   return new THREE.MeshBasicMaterial({
-    map: loader.load(path)
+    map: loader.load(path, function () {
+        isRotation = true;
+    })
   });
 }
 
