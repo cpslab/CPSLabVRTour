@@ -2,3 +2,4 @@ node_modules
 *.sketch
 *.log
 /.idea/
+bundle.js
