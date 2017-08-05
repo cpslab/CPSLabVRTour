@@ -22,6 +22,8 @@ let isWindowChanged4Modal = false;
 
 let modalMesh = new THREE.Mesh();
 
+let rotatePosition = 0;
+
 sphereGeo.scale(-1, 1, 1);
 const sphere = new THREE.Mesh(sphereGeo, loadSphereImage(data[imageId].path));
 imageId = data[imageId].id;
@@ -31,8 +33,6 @@ scene.add(sphere);
 const camera = new THREE.PerspectiveCamera(75, width / height, 1, 2000);
 camera.position.set(0, 0, 0.1);
 camera.lookAt(sphere.position);
-
-requestAnimationFrame(animate);
 
 // iconを作る
 const icon1Mesh = getLinkIconMesh(data[imageId].link[0]);
@@ -52,7 +52,7 @@ renderer.render(scene, camera);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 initCameraControls();
-render();
+render(0);
 
 function getMouseRay(e) {
   if (e.target !== renderer.domElement) {
@@ -150,11 +150,6 @@ window.onmousedown = function (ev) {
   }
 };
 
-function animate(time) {
-  requestAnimationFrame(animate);
-  TWEEN.update(time);
-}
-
 function initCameraControls() {
   controls.enableDamping = true;
   controls.dampingFactor = 0.25;
@@ -205,13 +200,30 @@ function trasition(linkIndex) {
   imageId = nextId;
 }
 
-function render() {
+function rotateAnimation() {
+    if (rotatePosition > 360) {
+      rotatePosition = 0;
+      if (Math.random() < 0.5) {
+          trasition(0);
+      } else {
+          trasition(1);
+      }
+      return;
+    }
+    rotatePosition += 0.2;
+    camera.rotation.y = -1 * rotatePosition * Math.PI / 180;
+    // theta = theta * Math.PI / 180;
+}
+
+function render(time) {
   requestAnimationFrame(render);
   // sphere.rotation.y += 0.05 * Math.PI/180;
   // 画面リサイズ対応
   window.addEventListener('resize', onWindowResize, false);
   renderer.render(scene, camera);
   controls.update();
+  TWEEN.update(time);
+  rotateAnimation();
 }
 
 function onWindowResize() {
